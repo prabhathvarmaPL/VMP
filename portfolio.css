@@ -14,6 +14,11 @@ html, body {
   min-height: 100%;
 }
 
+@media (min-width: 880px) {
+  html, body { overflow: hidden; height: 100%; }
+  .root { height: 100vh; height: 100dvh; overflow: hidden; }
+}
+
 ::selection { background: var(--primary); color: #000; }
 
 a { color: inherit; text-decoration: none; }
