@@ -336,11 +336,6 @@ function App() {
           </div>
 
           <div className="hero-right">
-            <div className="eyebrow">
-              <span className="eyebrow-line" />
-              <span className="eyebrow-text">{PROFILE.role}</span>
-            </div>
-
             <h1 className="display">
               <span className="display-line">Viswa Mihir</span>
               <span className="display-line outline">Pannala</span>
