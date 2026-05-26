@@ -26,5 +26,22 @@
       const root = ReactDOM.createRoot(document.getElementById('root'));
       root.render(<PortfolioApp />);
     </script>
+
+    <script>
+      function fitToScreen() {
+        if (window.innerWidth < 880) { document.documentElement.style.zoom = ''; return; }
+        document.documentElement.style.zoom = '';
+        var scale = Math.min(1, window.innerHeight / document.body.scrollHeight);
+        if (scale < 1) document.documentElement.style.zoom = scale;
+      }
+      var observer = new MutationObserver(function(_, obs) {
+        if (document.querySelector('.root')) {
+          obs.disconnect();
+          requestAnimationFrame(fitToScreen);
+        }
+      });
+      observer.observe(document.getElementById('root'), { childList: true, subtree: true });
+      window.addEventListener('resize', fitToScreen);
+    </script>
   </body>
 </html>
