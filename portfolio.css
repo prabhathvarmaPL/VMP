@@ -17,14 +17,17 @@ html, body {
 @media (min-width: 880px) {
   html, body { overflow: hidden; height: 100%; }
   .root { height: 100vh; height: 100dvh; overflow: hidden; }
+}
+
+/* Compact layout for short screens (laptops) — leaves tall monitors unchanged */
+@media (min-width: 880px) and (max-height: 900px) {
   .stage {
-    gap: min(calc(clamp(40px, 7vw, 80px) * var(--density, 1)), 4vh);
-    padding-top: min(clamp(16px, 3vw, 32px), 2.5vh);
-    padding-bottom: min(clamp(24px, 4vw, 48px), 2.5vh);
+    gap: 2vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
   }
-  .hero { gap: min(clamp(40px, 6vw, 88px), 5vh); }
-  .hero-left { padding: min(32px, 2vh) 14% min(48px, 3vh) 4%; }
-  .orb-wrap { width: min(34vw, 400px, 42vh); }
+  .hero-left { padding-top: 1vh; padding-bottom: 1.5vh; }
+  .orb-wrap { width: min(34vw, 38vh); }
 }
 
 ::selection { background: var(--primary); color: #000; }
